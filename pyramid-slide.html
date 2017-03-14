@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <style>
-    </style>
-</head>
+<link type="text/css" rel="stylesheet" href="./pyramid-slide.css"/>
+<head>Pyramid-Slide</head>
 <body>
     <h1>Pyramid Slide</h1>
     <p><strong>Draw a pyramid</strong></p>
@@ -15,15 +13,15 @@
         </label>
         <br><br>
     </form>
-    <form id="brick-symbol">
         <label>
             Brick Symbol:
-            <select>
+            <select id= "brickType" onchange= "outputUpdate()">
                 <option>#</option>
                 <option>@</option>
                 <option>X</option>
                 <option>$</option>
             </select>
+        </label>
     <br><br>
 
     <div id="pyramid"></div>

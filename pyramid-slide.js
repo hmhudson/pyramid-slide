@@ -1,33 +1,31 @@
 
-function outputUpdate(vol) {
-	document.querySelector('#height').value = vol;
-    drawPyramid(vol);
+function outputUpdate() {
+    var heightElem = document.getElementById("fader").value;
+    var brickType = document.getElementById("brickType").value;
+    document.getElementById("height").innerHTML = heightElem;
+
+    drawPyramid(heightElem, brickType);
 }
 
-
-
-var heightElem = document.getElementById("draw-form");
-var brickType = document.getElementById("brick-symbol");
-
-function drawPyramid(height) {
+function drawPyramid(heightElem, brickType) {
 
     document.getElementById("pyramid").innerHTML = "";
 
-    for (var row = 0; row < height; row++) {
+    for (var row = 0; row < heightElem; row++) {
 
-        var numBricks = row + 2;
-        var numSpaces = heightElem + row + 1;
+        var numBricks = row + 2 + " ";
+        var numSpaces = heightElem - row - 1;
 
         var rowStr = "";
         for (var i = 0; i < numSpaces; i++) {
-            var spaceChar = "&nbsp";
-            rowStr += spaceChar;
+                var spaceChar = "&nbsp";
+                rowStr += spaceChar;
         }
         for (var i = 0; i < numBricks; i++) {
-            rowStr += "h";
+                rowStr += brickType;
         }
-
-        rowElem = document.createElement("p");
+        console.log(rowStr);
+        var rowElem = document.createElement("p");
         rowElem.innerHTML = rowStr;
         document.getElementById("pyramid").appendChild(rowElem);
     }
