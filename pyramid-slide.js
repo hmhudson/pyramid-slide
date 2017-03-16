@@ -1,3 +1,4 @@
+document.onload = outputUpdate();
 
 function outputUpdate() {
     var heightElem = document.getElementById("fader").value;
@@ -13,10 +14,10 @@ function drawPyramid(heightElem, brickType) {
 
     for (var row = 0; row < heightElem; row++) {
 
-        var numBricks = row + 2 + " ";
+        var numBricks = row + 2 + ' ';
         var numSpaces = heightElem - row - 1;
 
-        var rowStr = "";
+        var rowStr = " ";
         for (var i = 0; i < numSpaces; i++) {
                 var spaceChar = "&nbsp";
                 rowStr += spaceChar;

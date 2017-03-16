@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html>
 <link type="text/css" rel="stylesheet" href="./pyramid-slide.css"/>
-<head>Pyramid-Slide</head>
+<head></head>
 <body>
-    <h1>Pyramid Slide</h1>
-    <p><strong>Draw a pyramid</strong></p>
-    <form id="draw-form">
-        <label>
-            <label for "fader">How High</label>
-            <input type="range" min="1" max="20" value= "20" id="fader" step= "1" oninput= "outputUpdate(value)">
-            <output for= "fader" id = "height">20</output>
-        </label>
-        <br><br>
-    </form>
-        <label>
-            Brick Symbol:
-            <select id= "brickType" onchange= "outputUpdate()">
-                <option>#</option>
-                <option>@</option>
-                <option>X</option>
-                <option>$</option>
-            </select>
-        </label>
-    <br><br>
+    <div id="header">
+        <h1>Pyramid Slide</h1>
+    </div>
+    <div id="mainContainer">
+        <div id="formContainer">
+            <form id= "brickForm">
+                <label>
+                    Brick Symbol:
+                </label>
+                <select id= "brickType" onchange= "outputUpdate()">
+                    <option>#</option>
+                    <option>@</option>
+                    <option>X</option>
+                    <option>$</option>
+                </select>
+            </form>
+             <form id="draw-form">
+                <label for "fader">How High?</label>
+                <input type="range" min="1" max="20" value= "1" id="fader" step= "1" oninput= "outputUpdate(value)">
+                <output for= "fader" id = "height">1</output>
+            </form>
+        </div>
 
-    <div id="pyramid"></div>
+        <div id="pyramidContainer">
+            <div id="pyramid"></div>
+        </div>
+    </div>
 
     <script src="pyramid-slide.js"></script>
 </body>
